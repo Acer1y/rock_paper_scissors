@@ -1,72 +1,136 @@
 /*
-Create a rock paper scissors Game
-    Player vs Computer
-    Prompts user for rock, paper, or scissors
-    Play for one round only
-        Rock beats scissors
-        paper beats rock
-        scissors beats paper
-    Computer's player is random generated
+To do list:
+Create event listeners:
+    Rock Button
+    Paper Button
+    Scissors button
+Change play function to run when button is pressed
+Create point system
+Make function that updates score on page
 
-    To do: 
-    Create variable to prompt for input (choose rock, paper scissors)
-    Create function to generate the computers hand
-    Create function to play game
-        rock beats scissor
-        paper beats rock
-        scissors beats paper
-            compare AI to player hands. Logic should be like above
-    Include a tie breaker
-        */
+hal smack talk:
+Find way to pick a line from list
+Draw line above play buttons
+smack talk is generated every time a button is clicked and on page load for first time.
+*/
 
-    let input = prompt("Rock, Paper, or Scissors?").toLowerCase();
-    console.log(input)
+//Declare variables for finding HTML elements/containers
+const rockButton = document.querySelector('.rock')
+const paperButton = document.querySelector('.paper')
+const scissorButton = document.querySelector('.scissor')
+const playArea = document.querySelector('.text')
+const playerScore = document.querySelector('.playerScore')
+const halScore = document.querySelector('.halScore')
 
-
-   let ai = computer()
-   
-   function computer() {
-        let computerhand = Math.random() * 100
-        if (computerhand <= 33) {
-            computerhand = "rock"
-        }
-        else if (computerhand <=66) {
-            computerhand = "paper"
-        }
-        else {
-            computerhand = "scissors"
-        }
-        return computerhand
-    }
+let pScore = 0
+playerScore.textContent = 'Your score: ' + pScore
+let hScore = 0
+halScore.textContent = "Hal 9000's score:" + hScore
 
 
+
+//Function for actually playing game
     function playgame(input,ai) {
             console.log(input.toLowerCase())
             if (input == "rock" && ai == "scissors") /*AI has rock */ {
-                console.log ("You won!")
-                console.log("you had " + input && "ai had " + ai) 
+                playArea.textContent = "You won! " + "Hal chose " + ai
+                pScore++
+                playerScore.textContent = 'Your score: ' + pScore
+
+
             }
             else if (input == "rock" && ai == "paper") { // AI has rock
-                console.log("You lost!")
-                console.log("you had " + input && "ai had " + ai) 
+                playArea.textContent = "You lost! " + "Hal chose " + ai
+                hScore++
+                halScore.textContent = "Hal 9000's score:" + hScore
             }
             else if (input == "scissors" && ai == "paper") { // AI has rock
-                console.log("You won!")
-                console.log("you had " + input && "ai had " + ai)  
+                playArea.textContent = "You won! " + "Hal chose" + ai
+                pScore++
+                playerScore.textContent = 'Your score: ' + pScore
+
             }
             else if (input == "paper" && ai == "scissors"){
-                console.log("You lost!")
-                console.log("you had " + input && "ai had " + ai)  
+                playArea.textContent = "You lost!" + "Hal chose " + ai
+                hScore++
+                halScore.textContent = "Hal 9000's score:" + hScore
+
             }
             else if (input == "paper" && ai == "rock"){
-                console.log("You won!")
-                console.log("you had " + input && "ai had " + ai)  
+                playArea.textContent = "You won! " + "Hal chose " + ai
+                pScore++
+                playerScore.textContent = 'Your score: ' + pScore
             }
             else {
-                console.log("You tied, tie breaker!")
-                console.log("you had " + input && "ai had " + ai) 
+                playArea.textContent = "You tied, try again!"
             }
             }
 
+rockButton.addEventListener('click', () => {
+    //Function to generate hal's play for game function
+    let ai = computer()
+   
+    function computer() {
+         let computerhand = Math.random() * 100
+         console.log(computerhand)
+         if (computerhand <= 33) {
+             computerhand = "rock"
+         }
+         else if (computerhand <=66) {
+             computerhand = "paper"
+         }
+         else {
+             computerhand = "scissors"
+         }
+         return computerhand
+     }
+    playgame('rock',ai)
 
-    playgame(input,ai)
+})
+
+paperButton.addEventListener('click', () => {
+    //Function to generate hal's play for game function
+    let ai = computer()
+   
+    function computer() {
+         let computerhand = Math.random() * 100
+         console.log(computerhand)
+         if (computerhand <= 33) {
+             computerhand = "rock"
+         }
+         else if (computerhand <=66) {
+             computerhand = "paper"
+         }
+         else {
+             computerhand = "scissors"
+         }
+         return computerhand
+     }
+    playgame('paper',ai)
+
+    scissorButton.addEventListener('click', () => {
+        //Function to generate hal's play for game function
+        let ai = computer()
+       
+        function computer() {
+             let computerhand = Math.random() * 100
+             console.log(computerhand)
+             if (computerhand <= 33) {
+                 computerhand = "rock"
+             }
+             else if (computerhand <=66) {
+                 computerhand = "paper"
+             }
+             else {
+                 computerhand = "scissors"
+             }
+             return computerhand
+         }
+        playgame('scissor',ai)
+    
+    })
+
+})
+
+
+
