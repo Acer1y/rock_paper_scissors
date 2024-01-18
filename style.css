@@ -1,10 +1,16 @@
+body {
+    background-color: black;
+    color: lightgreen;
+}
+
 .playArea{
     display:flex;
     justify-content: center;
 }
 
 .scoreBoard{
-    order:3
+    order:3;
+    margin-left: 15px;
 }
 
 .halimg{
@@ -12,8 +18,22 @@
 }
 
 .buttons{
-    order:0
+    order:0;
+    margin-right: 15px;
 }
 
+.halScreen{
+    border-style: solid;
+    border-color: lightgrey;
+    flex: 0 0 200px;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
 
 
