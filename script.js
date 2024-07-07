@@ -93,6 +93,11 @@ halScore.textContent = "Hal 9000's score:" + hScore
                 pScore++
                 playerScore.textContent = 'Your score: ' + pScore
 
+            } 
+            else if (input == "scissors" && ai == "rock") {
+                halScreen.textContent = hal9000WinStatements[halRNG]
+                hScore++
+                halScore.textContent = "Hal 9000's score:" + hScore
             }
             else if (input == "paper" && ai == "scissors"){
                 halScreen.textContent = hal9000WinStatements[halRNG]
@@ -104,7 +109,7 @@ halScore.textContent = "Hal 9000's score:" + hScore
                 halScreen.textContent = hal9000WinStatements[halRNG]
                 pScore++
                 playerScore.textContent = 'Your score: ' + pScore
-            }
+            } 
             else {
                 console.log(`Human input is ${input} and ai is: ${ai}`)
                 halScreen.textContent = hal9000TieStatements[halRNG]
