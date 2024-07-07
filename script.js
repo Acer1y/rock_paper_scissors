@@ -171,7 +171,7 @@ scissorButton.addEventListener('click', () => {
             }
             return computerhand
         }
-    playgame('scissor',ai)
+    playgame('scissors',ai)
 
 })
 
