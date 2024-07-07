@@ -6,7 +6,7 @@ const playArea = document.querySelector('.text')
 const playerScore = document.querySelector('.playerScore')
 const halScore = document.querySelector('.halScore')
 const halScreen = document.querySelector('.halScreen')
-let smackTalkGen = Math.floor(Math.random() * 50)
+let smackTalkGen = Math.floor(Math.random() * 46)
 
 window.onload = function() {
     const hal9000Lines = [
@@ -75,7 +75,7 @@ halScore.textContent = "Hal 9000's score:" + hScore
 
 //Function for actually playing game
     function playgame(input,ai) {
-        smackTalkGen = Math.floor(Math.random() * 50)
+        smackTalkGen = Math.floor(Math.random() * 46)
         let halRNG = smackTalkGen
             console.log(input.toLowerCase())
             if (input == "rock" && ai == "scissors") {
