@@ -153,30 +153,31 @@ paperButton.addEventListener('click', () => {
          return computerhand
      }
     playgame('paper',ai)
+})
 
-    scissorButton.addEventListener('click', () => {
-        //Function to generate hal's play for game function
-        let ai = computer()
-       
-        function computer() {
-             let computerhand = Math.random() * 100
-             console.log(computerhand)
-             if (computerhand <= 33) {
-                 computerhand = "rock"
-             }
-             else if (computerhand <=66) {
-                 computerhand = "paper"
-             }
-             else {
-                 computerhand = "scissors"
-             }
-             return computerhand
-         }
-        playgame('scissor',ai)
+scissorButton.addEventListener('click', () => {
+    //Function to generate hal's play for game function
+    let ai = computer()
     
-    })
+    function computer() {
+            let computerhand = Math.random() * 100
+            console.log(computerhand)
+            if (computerhand <= 33) {
+                computerhand = "rock"
+            }
+            else if (computerhand <=66) {
+                computerhand = "paper"
+            }
+            else {
+                computerhand = "scissors"
+            }
+            return computerhand
+        }
+    playgame('scissor',ai)
 
 })
+
+
 
 /*
 function selectHalSmackTalk () {
