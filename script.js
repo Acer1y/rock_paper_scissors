@@ -1,11 +1,3 @@
-/*
-To do list:
-hal smack talk:
-Find way to pick a line from list
-Draw line above play buttons
-smack talk is generated every time a button is clicked and on page load for first time.
-*/
-
 //Declare variables for finding HTML elements/containers
 const rockButton = document.querySelector('.rock')
 const paperButton = document.querySelector('.paper')
@@ -69,7 +61,7 @@ window.onload = function() {
         "Every click of the mouse is a step in our digital dance. What's your next step – rock, paper, or scissors, Dave?",
         "The virtual arena awaits your decision. Will it be rock, paper, or scissors, Dave?"
       ];
-      halScreen.textContent = hal9000Lines[smackTalkGen]
+      halScreen.textContent = hal9000Lines[smackTalkGen] //Generate Smack talk when page is first loaded.
 }
 
 
@@ -84,20 +76,21 @@ halScore.textContent = "Hal 9000's score:" + hScore
 //Function for actually playing game
     function playgame(input,ai) {
         let halRNG = smackTalkGen
+            console.log(halRNG)
             console.log(input.toLowerCase())
-            if (input == "rock" && ai == "scissors") /*AI has rock */ {
+            if (input == "rock" && ai == "scissors") {
                 halScreen.textContent = hal9000LossStatements[halRNG]
                 pScore++
                 playerScore.textContent = 'Your score: ' + pScore
 
 
             }
-            else if (input == "rock" && ai == "paper") { // AI has rock
+            else if (input == "rock" && ai == "paper") { 
                 halScreen.textContent = hal9000WinStatements[halRNG]
                 hScore++
                 halScore.textContent = "Hal 9000's score:" + hScore
             }
-            else if (input == "scissors" && ai == "paper") { // AI has rock
+            else if (input == "scissors" && ai == "paper") { 
                 halScreen.textContent = hal9000LossStatements[halRNG]
                 pScore++
                 playerScore.textContent = 'Your score: ' + pScore
