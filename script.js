@@ -76,14 +76,11 @@ halScore.textContent = "Hal 9000's score:" + hScore
 //Function for actually playing game
     function playgame(input,ai) {
         let halRNG = smackTalkGen
-            console.log(halRNG)
             console.log(input.toLowerCase())
             if (input == "rock" && ai == "scissors") {
                 halScreen.textContent = hal9000LossStatements[halRNG]
                 pScore++
                 playerScore.textContent = 'Your score: ' + pScore
-
-
             }
             else if (input == "rock" && ai == "paper") { 
                 halScreen.textContent = hal9000WinStatements[halRNG]
@@ -108,6 +105,7 @@ halScore.textContent = "Hal 9000's score:" + hScore
                 playerScore.textContent = 'Your score: ' + pScore
             }
             else {
+                console.log(`Human input is ${input} and ai is: ${ai}`)
                 halScreen.textContent = hal9000TieStatements[halRNG]
             }
             }
